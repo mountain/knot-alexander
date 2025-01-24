@@ -2,9 +2,6 @@
 
 Calculate alexander polynomial from fundamental group by AEG
 
-
-
-
 ## Usage
 
 cd to this project directory, and run the following command in sage:
