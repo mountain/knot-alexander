@@ -7,10 +7,7 @@ def check(depth, knot_name):
     R = PolynomialRing(QQ, 'a')
     t = R.gen()
 
-    if int(knot_name.split('_')[0]) > 11:
-        M = sk.database(knot_name)
-    else:
-        M = sp.Manifold(knot_name)
+    M = sp.Manifold(knot_name)
     M.randomize()
     a = M.alexander_polynomial()
 
