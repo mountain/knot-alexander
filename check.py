@@ -14,6 +14,8 @@ def check(depth, knot_name):
 
     g = M.fundamental_group()
     if not g.num_generators() == 2:
+        print('Knot:', knot_name)
+        print("Fundamental group:\n", g)
         return
 
     r = M.fundamental_group().relators()[0]
