@@ -3,7 +3,6 @@ import snappy
 from sage.all import *
 
 
-
 def check(depth, knot_name):
     R = PolynomialRing(QQ, 'a')
     t = R.gen()
@@ -57,12 +56,12 @@ def check(depth, knot_name):
                 break
         if result:
             pass
-            # print('----------------------------------------------')
-            # print('Knot:', knot_name)
-            # print("Fundamental group:\n", g)
-            # print("Alexander polynomial:", a)
-            # print("Calculated result:",p)
-            # print('Check result:', result)
+            print('----------------------------------------------')
+            print('Knot:', knot_name)
+            print("Fundamental group:\n", g)
+            print("Alexander polynomial:", a)
+            print("Calculated result:",p)
+            print('Check result:', result)
     else:
         check(depth + 1, knot_name)
 
