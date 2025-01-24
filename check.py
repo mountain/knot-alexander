@@ -1,4 +1,4 @@
-import snappy
+import snappy as sp
 
 from sage.all import *
 
@@ -7,14 +7,17 @@ def check(depth, knot_name):
     R = PolynomialRing(QQ, 'a')
     t = R.gen()
 
-    M = snappy.Manifold(knot_name)
+    if int(knot_name.split('_')[0]) > 11:
+        M = sk.database(knot_name)
+    else:
+        M = sp.Manifold(knot_name)
     M.randomize()
     a = M.alexander_polynomial()
 
     g = M.fundamental_group()
     if not g.num_generators() == 2:
-        print('Knot:', knot_name)
-        print("Fundamental group:\n", g)
+        # print('Knot:', knot_name)
+        # print("Fundamental group:\n", g)
         return
 
     r = M.fundamental_group().relators()[0]
@@ -68,7 +71,7 @@ def check(depth, knot_name):
 
 # All Rolfsen tables
 knots = []
-for i, j in zip(range(3, 15), [1, 1, 2, 3, 7, 21, 49, 165, 552, 2176, 9988, 46972, 253293]):
+for i, j in zip(range(3, 12), [1, 1, 2, 3, 7, 21, 49, 165, 552, 2176]):
     for k in range(1, j + 1):
         knots.append('%d_%d' % (i, k))
 
