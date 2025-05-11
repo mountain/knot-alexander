@@ -112,6 +112,13 @@ def check(depth, knot_name):
     check(depth + 1, knot_name)
 
 
-knot2relators['4_1'] = {}
-while len(knot2relators['4_1']) < 8:
-    check(0, '4_1')
+# All Rolfsen tables
+knots = []
+for i, j in zip(range(3, 9), [1, 1, 2, 3, 7, 21]):
+    for k in range(1, j + 1):
+        knots.append('%d_%d' % (i, k))
+
+# Check all knots
+for k in knots:
+    print('==' * 80)
+    check(0, k)

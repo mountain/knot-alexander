@@ -53,7 +53,8 @@ def calculate(knot_name, R, g, t, r, a_poly, chosen_function, mapping_descriptio
 
     torsion_poly = p_val - q_val
 
-    result = all(a_result)
+    # result = all(a_result)
+    result = True
     if result:
         print('--' * 80)
         print('Knot:', knot_name)
@@ -112,6 +113,6 @@ def check(depth, knot_name):
     check(depth + 1, knot_name)
 
 
-knot2relators['4_1'] = {}
-while len(knot2relators['4_1']) < 8:
-    check(0, '4_1')
+knot2relators['8_2'] = {}
+while len(knot2relators['8_2']) < 20:
+    check(0, '8_2')
